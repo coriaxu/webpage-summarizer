@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "Webpage Smart Summary",
+    "description": "The name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Generate intelligent summaries for any webpage using DeepSeek AI",
+    "description": "Description of the extension"
+  },
+  "summarizeButtonText": {
+    "message": "Generate Summary",
+    "description": "Text for the generate summary button"
+  },
+  "loadingText": {
+    "message": "Generating summary, please wait...",
+    "description": "Loading message text"
+  },
+  "errorText": {
+    "message": "Error generating summary, please try again",
+    "description": "Error message text"
+  },
+  "copyButtonText": {
+    "message": "Copy to Clipboard",
+    "description": "Copy button text"
+  },
+  "shortLengthText": {
+    "message": "Short",
+    "description": "Short summary option"
+  },
+  "mediumLengthText": {
+    "message": "Medium",
+    "description": "Medium summary option"
+  },
+  "longLengthText": {
+    "message": "Long",
+    "description": "Long summary option"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "网页智能摘要",
+  "version": "1.0.0",
+  "description": "基于 DeepSeek 的智能网页摘要工具",
+  "default_locale": "zh_CN",
+  "icons": {
+    "16": "assets/icons/icon_16.png",
+    "48": "assets/icons/icon_48.png",
+    "128": "assets/icons/icon_128.png"
+  },
+  "browser_action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon_16.png",
+      "48": "assets/icons/icon_48.png",
+      "128": "assets/icons/icon_128.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["src/background/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.js"]
+    }
+  ]
+}

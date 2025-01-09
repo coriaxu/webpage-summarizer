@@ -1,0 +1,38 @@
+{
+  "extensionName": {
+    "message": "网页智能摘要",
+    "description": "扩展名称"
+  },
+  "extensionDescription": {
+    "message": "使用DeepSeek AI为任何网页生成智能摘要",
+    "description": "扩展描述"
+  },
+  "summarizeButtonText": {
+    "message": "生成摘要",
+    "description": "生成摘要按钮文本"
+  },
+  "loadingText": {
+    "message": "正在生成摘要，请稍候...",
+    "description": "加载提示文本"
+  },
+  "errorText": {
+    "message": "生成摘要时出错，请重试",
+    "description": "错误提示文本"
+  },
+  "copyButtonText": {
+    "message": "复制到剪贴板",
+    "description": "复制按钮文本"
+  },
+  "shortLengthText": {
+    "message": "简短",
+    "description": "简短摘要选项"
+  },
+  "mediumLengthText": {
+    "message": "中等",
+    "description": "中等摘要选项"
+  },
+  "longLengthText": {
+    "message": "详细",
+    "description": "详细摘要选项"
+  }
+}
