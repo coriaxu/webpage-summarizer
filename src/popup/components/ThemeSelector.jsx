@@ -1,28 +1,33 @@
 import React from 'react';
+import { useTheme } from '../../contexts/ThemeContext.jsx';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 
-const themes = [
-  { id: 'blue', name: '蓝色' },
-  { id: 'green', name: '绿色' },
-  { id: 'orange', name: '橙色' }
-];
+const ThemeSelector = () => {
+  const { theme, setTheme } = useTheme();
+  const { language } = useLanguage();
 
-function ThemeSelector({ value, onChange }) {
+  const themes = [
+    { id: 'light', icon: '☀️', label: { zh: '浅色', en: 'Light' } },
+    { id: 'dark', icon: '🌙', label: { zh: '深色', en: 'Dark' } },
+  ];
+
   return (
-    <div className="theme-selector">
-      <label>主题：</label>
-      <select 
-        value={value} 
-        onChange={(e) => onChange(e.target.value)}
-        className="theme-select"
-      >
-        {themes.map(theme => (
-          <option key={theme.id} value={theme.id}>
-            {theme.name}
-          </option>
-        ))}
-      </select>
+    <div className="selector theme-selector">
+      {themes.map(({ id, icon, label }) => (
+        <button
+          key={id}
+          className={`selector-option ${theme === id ? 'active' : ''}`}
+          onClick={() => setTheme(id)}
+          title={label[language === 'zh' ? 'zh' : 'en']}
+        >
+          <span className="selector-icon">{icon}</span>
+          <span className="selector-label">
+            {label[language === 'zh' ? 'zh' : 'en']}
+          </span>
+        </button>
+      ))}
     </div>
   );
-}
+};
 
 export default ThemeSelector;

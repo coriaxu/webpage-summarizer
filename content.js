@@ -1,0 +1,4 @@
+chrome.runtime.onMessage.addListener(function(n,o,e){if(console.log("Content script received message:",n),n.action==="getContent"){try{const t=s();console.log("Extracted content length:",t.length),e(t)}catch(t){console.error("Error extracting content:",t),e("")}return!0}});function s(){var l;const n=document.title;(l=document.querySelector('meta[name="description"]'))!=null&&l.content;const o=document.querySelector("article");let e="";if(o)e=o.textContent;else{const r=[document.querySelector("main"),document.querySelector("#main"),document.querySelector(".main"),document.querySelector("#content"),document.querySelector(".content"),document.body].find(c=>c&&c.textContent.trim());r&&(r.querySelectorAll('nav, header, footer, #header, #footer, .header, .footer, script, style, [role="navigation"]').forEach(i=>i.remove()),e=r.textContent)}return e=e.replace(/[\n\r]+/g," ").replace(/\s+/g," ").trim(),`标题：${n}
+
+${e}`.substring(0,2e3)}
+//# sourceMappingURL=content.js.map

@@ -1,28 +1,31 @@
 import React from 'react';
+import { useLanguage } from '../../contexts/LanguageContext.jsx';
 
-const lengthOptions = [
-  { id: 'short', name: '简短' },
-  { id: 'medium', name: '中等' },
-  { id: 'long', name: '详细' }
-];
+const SummaryLengthControl = ({ value, onChange }) => {
+  const { language } = useLanguage();
 
-function SummaryLengthControl({ value, onChange }) {
+  const lengths = [
+    { id: 'short', label: { zh: '简短', en: 'Short' } },
+    { id: 'medium', label: { zh: '中等', en: 'Medium' } },
+    { id: 'long', label: { zh: '详细', en: 'Long' } }
+  ];
+
   return (
     <div className="summary-length-control">
       <label>摘要长度：</label>
       <div className="length-options">
-        {lengthOptions.map(option => (
+        {lengths.map(({ id, label }) => (
           <button
-            key={option.id}
-            className={`length-option ${value === option.id ? 'active' : ''}`}
-            onClick={() => onChange(option.id)}
+            key={id}
+            className={`length-option ${value === id ? 'active' : ''}`}
+            onClick={() => onChange(id)}
           >
-            {option.name}
+            {label[language === 'zh' ? 'zh' : 'en']}
           </button>
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default SummaryLengthControl;

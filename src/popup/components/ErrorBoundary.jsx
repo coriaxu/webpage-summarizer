@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error("Error caught by boundary:", error, errorInfo);
   }
 
   render() {
@@ -20,9 +20,7 @@ class ErrorBoundary extends React.Component {
         <div className="error-boundary">
           <h2>出错了</h2>
           <p>很抱歉，程序遇到了一些问题。请刷新页面重试。</p>
-          <button onClick={() => window.location.reload()}>
-            刷新页面
-          </button>
+          <button onClick={() => window.location.reload()}>刷新页面</button>
         </div>
       );
     }

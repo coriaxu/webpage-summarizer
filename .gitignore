@@ -5,10 +5,6 @@ node_modules/
 dist/
 build/
 *.map
-background.js
-content.js
-popup.js
-assets/css/
 
 # Debug logs
 npm-debug.log*
@@ -32,3 +28,4 @@ Thumbs.db
 
 # Config files
 src/config/config.js
+src/config/index.js
